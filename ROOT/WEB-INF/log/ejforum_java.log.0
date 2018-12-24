@@ -1,0 +1,139 @@
+十二月 24, 2018 6:56:43 下午 com.hongshee.ejforum.common.AppContext init
+严重: EasyJForum AppContext : error in init().
+org.apache.tomcat.dbcp.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Server connection failure during transaction. Due to underlying exception: 'java.net.ConnectException: 拒绝连接 (Connection refused)'.
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.ConnectException
+MESSAGE: 拒绝连接 (Connection refused)
+
+STACKTRACE:
+
+java.net.ConnectException: 拒绝连接 (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:173)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:267)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2888)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1553)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at org.apache.tomcat.dbcp.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:37)
+	at org.apache.tomcat.dbcp.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:290)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:877)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:851)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.getConnection(BasicDataSource.java:540)
+	at com.hongshee.common.util.DBManager.getConnection(Unknown Source)
+	at com.hongshee.ejforum.data.UserDAO.initAdminUser(Unknown Source)
+	at com.hongshee.ejforum.common.AppContext.init(Unknown Source)
+	at com.hongshee.ejforum.common.ContextListener.contextInitialized(Unknown Source)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4729)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5167)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1101)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1786)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Attempted reconnect 3 times. Giving up.)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:855)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.getConnection(BasicDataSource.java:540)
+	at com.hongshee.common.util.DBManager.getConnection(Unknown Source)
+	at com.hongshee.ejforum.data.UserDAO.initAdminUser(Unknown Source)
+	at com.hongshee.ejforum.common.AppContext.init(Unknown Source)
+	at com.hongshee.ejforum.common.ContextListener.contextInitialized(Unknown Source)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4729)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5167)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1101)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1786)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException: Server connection failure during transaction. Due to underlying exception: 'java.net.ConnectException: 拒绝连接 (Connection refused)'.
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.ConnectException
+MESSAGE: 拒绝连接 (Connection refused)
+
+STACKTRACE:
+
+java.net.ConnectException: 拒绝连接 (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:173)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:267)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2888)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1553)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at org.apache.tomcat.dbcp.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:37)
+	at org.apache.tomcat.dbcp.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:290)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:877)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:851)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.getConnection(BasicDataSource.java:540)
+	at com.hongshee.common.util.DBManager.getConnection(Unknown Source)
+	at com.hongshee.ejforum.data.UserDAO.initAdminUser(Unknown Source)
+	at com.hongshee.ejforum.common.AppContext.init(Unknown Source)
+	at com.hongshee.ejforum.common.ContextListener.contextInitialized(Unknown Source)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4729)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5167)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1101)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1786)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:888)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2963)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1553)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at org.apache.tomcat.dbcp.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:37)
+	at org.apache.tomcat.dbcp.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:290)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:877)
+	at org.apache.tomcat.dbcp.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:851)
+	... 18 more
+
+十二月 24, 2018 6:56:43 下午 com.hongshee.ejforum.data.TopicISO destroy
+信息: Topic searcher finalized!
+十二月 24, 2018 6:56:43 下午 com.hongshee.ejforum.common.AppContext destroy
+信息: EasyJForum AppContext : destroyed.
